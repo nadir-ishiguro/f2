@@ -20,6 +20,8 @@ const (
 	EnvDefaultOpts = "F2_DEFAULT_OPTS"
 )
 
+var VersionString = "unset"
+
 // supportedDefaultOpts contains flags whose values can be
 // overridden through the `F2_DEFAULT_OPTS` environmental variable.
 var supportedDefaultOpts = []string{
@@ -207,7 +209,7 @@ func CreateCLIApp(r io.Reader, w io.Writer) *cli.App {
 		Usage: `f2 bulk renames files and directories, matching files against a specified
 pattern. It employs safety checks to prevent accidental overwrites and
 offers several options for fine-grained control over the renaming process.`,
-		Version:              "v2.1.0",
+		Version:              VersionString,
 		EnableBashCompletion: true,
 		Flags: []cli.Flag{
 			flagCSV,
